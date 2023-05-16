@@ -1,1 +1,8 @@
-{}
+{
+  "pages": {
+    "todo": {
+      "headline": "Meine Aufgaben",
+      "empty": "Sie haben keine Aufgaben"
+    }
+  }
+}

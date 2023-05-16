@@ -1,7 +1,12 @@
+import TodoPage from "./pages/todos/TodoPage";
 import { useAppSelector, useAppDispatch } from "./store/hooks";
 
 function App() {
-  return <>i'm gonna be an App!</>;
+  return (
+    <>
+      <TodoPage />
+    </>
+  );
 }
 
 export default App;
