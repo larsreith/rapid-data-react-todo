@@ -1,11 +1,13 @@
 import { t } from "i18next";
 import TodoItem from "./TodoItem/TodoItem";
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import TodoForm from "./TodoForm/TodoForm";
 import styles from "./todoPage.module.scss";
+import { addTodo, completeTodo } from "./todoSlice";
 
 function TodoPage() {
   const todos = useAppSelector((state) => state.todos);
+  const dispatch = useAppDispatch();
 
   return (
     <div className={styles.page}>
@@ -25,6 +27,9 @@ function TodoPage() {
                   id={todo.id}
                   task={todo.task}
                   isCompleted={todo.isCompleted}
+                  onChange={(value) => {
+                    dispatch(completeTodo({ id: todo.id, isCompleted: value }));
+                  }}
                 />
               );
             })

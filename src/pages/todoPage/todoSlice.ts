@@ -15,7 +15,7 @@ const initialState: Todo[] = [
   },
   {
     id: 3,
-    task: "Noch eine Aufgabe",
+    task: "Und noch eine Aufgabe",
     isCompleted: false,
   },
 ];
@@ -25,6 +25,8 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
+      console.log(state);
+
       const newTodo: Todo = {
         id: Date.now(),
         task: action.payload.task,
@@ -32,10 +34,20 @@ export const todoSlice = createSlice({
       };
       state.unshift(newTodo);
     },
+    completeTodo: (state, action) => {
+      console.log(state);
+
+      const index = state.findIndex((todo) => {
+        return todo.id === action.payload.id;
+      });
+      const todo = state[index];
+      if (todo) todo.isCompleted = action.payload.isCompleted;
+      state.slice();
+    },
   },
 });
 
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, completeTodo } = todoSlice.actions;
 
 export const todos = (state: RootState) => state.todos.values;
 
