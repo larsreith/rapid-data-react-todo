@@ -1,0 +1,8 @@
+.todoItem {
+  border-bottom: 1px lightgray solid;
+  padding: 15px 10px;
+
+  &:last-of-type {
+    border-bottom-width: 0;
+  }
+}

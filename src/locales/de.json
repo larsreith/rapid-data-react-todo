@@ -2,7 +2,13 @@
   "pages": {
     "todo": {
       "headline": "Meine Aufgaben",
-      "empty": "Sie haben keine Aufgaben"
+      "empty": "Sie haben keine Aufgaben",
+      "form": {
+        "cta": "Neue Aufgabe hinzufügen",
+        "inputLabel": "Neue Aufgabe",
+        "abortButton": "Abbrechen",
+        "submitButton": "Hinzufügen"
+      }
     }
   }
 }

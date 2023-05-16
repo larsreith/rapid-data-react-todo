@@ -1,0 +1,13 @@
+.todoForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonRow {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: flex-end;
+}

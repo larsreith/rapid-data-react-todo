@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "../../store/store";
-import { Todo } from "./TodoItem";
+import { Todo } from "./TodoItem/TodoItem";
 
 const initialState: Todo[] = [
   {
@@ -23,8 +23,19 @@ const initialState: Todo[] = [
 export const todoSlice = createSlice({
   name: "todos",
   initialState,
-  reducers: {},
+  reducers: {
+    addTodo: (state, action) => {
+      const newTodo: Todo = {
+        id: Date.now(),
+        task: action.payload.task,
+        isCompleted: false,
+      };
+      state.unshift(newTodo);
+    },
+  },
 });
+
+export const { addTodo } = todoSlice.actions;
 
 export const todos = (state: RootState) => state.todos.values;
 

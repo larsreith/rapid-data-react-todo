@@ -1,3 +1,5 @@
+import styles from "./todoItem.module.scss";
+
 export interface Todo {
   id: number;
   task: string;
@@ -5,7 +7,7 @@ export interface Todo {
 }
 
 function TodoItem(todo: Todo) {
-  return <div>{todo.task}</div>;
+  return <div className={styles.todoItem}>{todo.task}</div>;
 }
 
 export default TodoItem;
