@@ -2,12 +2,18 @@
   "pages": {
     "todo": {
       "headline": "Meine Aufgaben",
+      "welcomeTodo": "Willkommen zu ihrer ersten Aufgabe.",
       "empty": "Sie haben keine Aufgaben",
       "form": {
         "cta": "Neue Aufgabe hinzufügen",
         "inputLabel": "Neue Aufgabe",
         "abortButton": "Abbrechen",
         "submitButton": "Hinzufügen"
+      },
+      "deleteDialog": {
+        "title": "Möchten Sie die Aufgabe wirklich löschen?",
+        "abort": "Abbrechen",
+        "confirm": "Löschen"
       }
     }
   }

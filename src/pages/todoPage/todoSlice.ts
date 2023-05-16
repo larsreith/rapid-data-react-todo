@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../store/store";
 import { Todo } from "./TodoItem/TodoItem";
 
@@ -25,8 +25,6 @@ export const todoSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
-      console.log(state);
-
       const newTodo: Todo = {
         id: Date.now(),
         task: action.payload.task,
@@ -35,19 +33,22 @@ export const todoSlice = createSlice({
       state.unshift(newTodo);
     },
     completeTodo: (state, action) => {
-      console.log(state);
-
       const index = state.findIndex((todo) => {
         return todo.id === action.payload.id;
       });
       const todo = state[index];
       if (todo) todo.isCompleted = action.payload.isCompleted;
-      state.slice();
+    },
+    deleteTodo: (state, action) => {
+      const index = state.findIndex((todo) => {
+        return todo.id === action.payload.id;
+      });
+      state.splice(index, 1);
     },
   },
 });
 
-export const { addTodo, completeTodo } = todoSlice.actions;
+export const { addTodo, completeTodo, deleteTodo } = todoSlice.actions;
 
 export const todos = (state: RootState) => state.todos.values;
 
