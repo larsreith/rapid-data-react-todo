@@ -13,10 +13,12 @@ import {
   DialogTitle,
 } from "@mui/material";
 import { useState } from "react";
+import { Padding } from "@mui/icons-material";
 
 function TodoPage() {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState<boolean>(false);
   const [deleteTodoItem, setDeleteTodoItem] = useState<Todo>();
+
   const todos = useAppSelector((state) => state.todos);
   const dispatch = useAppDispatch();
 
@@ -62,9 +64,11 @@ function TodoPage() {
       >
         <DialogTitle>{t("pages.todo.deleteDialog.title")}</DialogTitle>
         <DialogContent>
-          <DialogContentText>{deleteTodoItem?.task}</DialogContentText>
+          <DialogContentText>"{deleteTodoItem?.task}"</DialogContentText>
         </DialogContent>
-        <DialogActions>
+        <DialogActions
+          sx={{ "padding-right": "15px", "padding-bottom": "15px" }}
+        >
           <Button onClick={() => setIsDeleteDialogOpen(false)}>
             {t("pages.todo.deleteDialog.abort")}
           </Button>

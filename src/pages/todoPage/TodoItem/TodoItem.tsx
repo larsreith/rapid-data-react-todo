@@ -1,7 +1,7 @@
 import { Delete } from "@mui/icons-material";
-import styles from "./todoItem.module.scss";
 import { Checkbox, IconButton } from "@mui/material";
 import { useState } from "react";
+import styles from "./todoItem.module.scss";
 
 export interface Todo {
   id: number;

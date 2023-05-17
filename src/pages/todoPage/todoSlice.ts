@@ -1,21 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../store/store";
 import { Todo } from "./TodoItem/TodoItem";
+import { t } from "i18next";
 
 const initialState: Todo[] = [
   {
     id: 1,
-    task: "Erste Aufgabe",
+    task: "Willkommen bei deiner Aufgabenübersicht.",
     isCompleted: false,
   },
   {
     id: 2,
-    task: "Noch eine Aufgabe",
+    task: "Hier kannst du neue Aufgaben erstellen.",
     isCompleted: false,
   },
   {
     id: 3,
-    task: "Und noch eine Aufgabe",
+    task: "Erledigte Ausgaben kannst du abhaken oder löschen.",
     isCompleted: false,
   },
 ];
