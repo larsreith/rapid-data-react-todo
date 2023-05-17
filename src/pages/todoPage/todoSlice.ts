@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../../store/store";
 import { Todo } from "./TodoItem/TodoItem";
-import { t } from "i18next";
 
 const initialState: Todo[] = [
   {

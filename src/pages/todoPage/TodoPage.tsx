@@ -13,7 +13,6 @@ import {
   DialogTitle,
 } from "@mui/material";
 import { useState } from "react";
-import { Padding } from "@mui/icons-material";
 
 function TodoPage() {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState<boolean>(false);
